@@ -1,0 +1,55 @@
+@import "reset";
+
+$font-stack: Helvetica, Verdana, sans-serif;
+$primary-color: #333;
+
+body {
+  font-family: $font-stack;
+}
+
+h1 {
+  font-size: 2em;
+  color: $primary-color;
+}
+
+table {
+  margin: 1em 0;
+  border: 2px solid black;
+}
+
+td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+button {
+  margin: 10px;
+
+}
+
+@import 'list-page';
+@import 'book-form';
+
+.btn-gradient {
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.21);
+  border-bottom: 4px solid rgba(0,0,0,0.21);
+  border-radius: 4px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+.btn-gradient.green {
+  background: rgba(130,200,160,1);
+  background: -moz-linear-gradient(top, rgba(130,200,160,1) 0%, rgba(130,199,158,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(130,200,160,1)), color-stop(100%, rgba(130,199,158,1)));
+  background: -webkit-linear-gradient(top, rgba(130,200,160,1) 0%, rgba(130,199,158,1) 100%);
+  background: -o-linear-gradient(top, rgba(130,200,160,1) 0%, rgba(130,199,158,1) 100%);
+  background: -ms-linear-gradient(top, rgba(130,200,160,1) 0%, rgba(130,199,158,1) 100%);
+  background: linear-gradient(to bottom, rgba(130,200,160,1) 0%, rgba(124, 185, 149, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82c8a0', endColorstr='#82c79e', GradientType=0 );
+}
+

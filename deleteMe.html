@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student's Page</title>
+</head>
+<body>
+    <h1>Student's Page</h1>
+    <br>
+  <div>
+    <table>
+      {{#learner.subjects}}
+      <tr>
+        <td>{{ Subject_Id }}</td>
+        <td>{{ Subject_Name }}</td>
+      </tr>
+      {{/learner.subjects}}
+    </table>
+    <form action="/teacher/progress/:{{learner.Learner_Id}}" method="get">
+      <button type="submit">Show My Progress</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student's Page</title>
+</head>
+<body>
+    <h1>Student's Page</h1>
+    <br>
+    <h2>Welcome Student {{Learner_Id}}</h2>
+    <br>
+    
+  <div>
+ 
+    <table id="t01" border="3" cellpadding="5" cellspacing="2" width="95%">
+      {{#subjects}}
+      <tr>
+      
+        <td>{{ Subject_Id }}</td>
+        
+        <td>{{ Subject_Name }}</td>
+      
+        <td>
+        <form action="/student/tutorials/{{Learner_Id}}/{{ Subject_Id }}"  method="get">
+          <button type="submit">{{ Subject_Name }}</button>
+       </form>
+       </td>
+        <td>
+        <form action="/student/exam/{{Learner_Id}}/{{ Subject_Id }}"  method="get">
+          <button type="submit">Give Exam of {{ Subject_Name }}</button>
+       </form>
+       </td>
+
+        
+         
+      </tr>
+      {{/subjects}}
+    </table>
+  </div>
+  
+  <br>
+  <div>
+    <form action="/student/progress/{{Learner_Id}}" method="get">
+      <button type="submit">Show My Progress</button>
+    </form>
+  </div>
+  <br>
+  <p>SELECT * FROM "Learners" WHERE "Learners"."Learner_Id" = input.Learner_Id and "Learners"."Password" = input.Password</p>
+  <p>SELECT * FROM "Subject</p>
+</body>
+</html>

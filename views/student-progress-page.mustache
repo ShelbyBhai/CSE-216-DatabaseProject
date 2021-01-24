@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student's Page</title>
+</head>
+<body>
+    <h1>Student's Page</h1>
+    <br>
+    <h2>Welcome Student {{Learner_Id}}</h2>
+    <br>
+    
+  <div>
+ 
+    <table id="t01" border="3" cellpadding="5" cellspacing="2" width="95%">
+      {{#subjects}}
+      <tr>
+      
+        <td>{{ Class_Id }}</td>
+        <td>{{ Subject_Name }}</td>
+        <td>{{ Progress }}</td>
+      
+         
+      </tr>
+      {{/subjects}}
+    </table>
+  </div>
+  
+  <br>
+  <div>
+    <form action="/student/{{Learner_Id}}" method="get">
+      <button type="submit">Main Page</button>
+    </form>
+   <p> select V."Class_Id" ,s."Subject_Name",j."Progress"
+   <br>
+      from "KHAN_ACADEMY".public."Virtual_Classroom" as V,"KHAN_ACADEMY".public."Subject" as s,"KHAN_ACADEMY".public."Joins" j<br>
+
+      where V."Teacher_Id"=j."Teacher_Id" and s."Subject_Id"=V."Subject_Id" and j."Learner_Id"=input.Learner_Id;</p>
+  </div>
+</body>
+</html>

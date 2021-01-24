@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Teacher's Page</title>
+</head>
+<body>
+    <h1>Teacher's Page</h1>
+    <br>
+    <h2>Welcome Teacher {{ Teacher_Id }}</h2>
+    <br>
+    
+  <div>
+ 
+    <table id="t01" border="3" cellpadding="5" cellspacing="2" width="95%">
+      
+      {{#subjects}}
+      <tr>
+        <td>{{ Learner_Id }}</td>
+        <td>{{ Progress }}</td>
+      </tr>
+      {{/subjects}}
+
+    </table>
+  </div>
+  
+  <br>
+  <p>SELECT * <br>FROM "Teacher"<br> WHERE "Teacher"."Teacher_Id" =input.Teacher_Id and "Teacher"."Password" = input.Password</p>
+  <p>select "Learner_Id","Progress"<br> from "Joins"<br> where "Joins"."Teacher_Id" = input.Teacher_Id</p>
+
+</body>
+</html>

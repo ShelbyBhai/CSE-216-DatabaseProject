@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>awm</title>
+</head>
+<body>
+<h1>Tutorials </h1>
+<div>
+ 
+    <table border="3" cellpadding="5" cellspacing="2" width="95%">
+      {{#tutorials}}
+      <tr>
+      
+        
+        
+        
+         <td>{{ Id }}</td>
+         <td>{{ Description }}</td>
+         <td><a href="{{ Youtube_Link }}">{{ Youtube_Link }}</a></td>
+      
+        
+
+        
+         
+      </tr>
+      {{/tutorials}}
+    </table>
+  </div>
+<br>
+<form action="/student/tutorials" method="post">
+<button type="submit">Here</button>
+</form>
+
+<p>(select * from public."Videos" where "Videos"."Id" <br> in (select "Is_Contained_In"."Tutorial_Id" from "Is_Contained_In" where "Is_Contained_In"."Subject_Id" = input.Subject_Id))<br> union (select "Description", "Link", "Id" from public."Articles" where "Articles"."Id" in (select "Is_Contained_In"."Tutorial_Id" from "Is_Contained_In" where "Is_Contained_In"."Subject_Id" = input.Subject_Id))</p>
+</body>

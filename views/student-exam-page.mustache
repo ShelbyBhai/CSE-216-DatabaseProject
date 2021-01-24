@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student's Page</title>
+</head>
+<body>
+    <h1>Student's Page</h1>
+    <br>
+    <h2>Welcome Student {{Student_Id}}</h2>
+    <br>
+    
+  <div>
+ 
+    <table id="t01" border="3" cellpadding="5" cellspacing="2" width="95%">
+      {{#subjects}}
+      <tr>
+      
+        <td>{{ Question_Name }}</td>
+      
+        <td>
+        <form action="/student/exam/{{Student_Id}}/{{Subject_Id}}/{{Question_Id}}" method="post">
+            <input type="text" placeholder="Give Answer" name="userAns">
+          <button type="submit">Submit Answer</button>
+       </form>
+       </td>
+         
+      </tr>
+      {{/subjects}}
+    </table>
+  </div>
+
+    <br>
+  {{#right}}
+  <p> Correct Answer! </p>
+  {{/right}}
+
+  {{#wrong}}
+  <p> Wrong Answer! </p>
+  {{/wrong}}
+  
+  <br>
+  <div>
+    <form action="/student/{{Student_Id}}" method="get">
+      <button type="submit">Student Homepage</button>
+    </form>
+  </div>
+  <p>select *
+            from "Questions"
+            <br>
+            where "Subject_Id" = input.Subject_Id;
+            </p>
+            <br>
+            <p>select "Question_Answer"
+            <br>
+      from "Questions"
+      <br>
+
+      where "Subject_Id" = input.Subject_Id and "Question_Id" = input.Question_Id;</p>
+</body>
+</html>
